@@ -343,7 +343,7 @@ export const getConfig: T.ExpectedExports.getConfig = compat.getConfig({
     type: "object",
     name: "Datum",
     description:
-      "Datum-Gateway settings. These are set to mine on OCEAN by default. Modify to switch to another Datum-supporting pool, or to solo mine.",
+      "Datum-Gateway settings for BLAKE2b (Bitcoin Knots). Change pool host/pubkey for your DATUM pool, or solo mine.",
     spec: {
       pool_host: {
         type: "string",

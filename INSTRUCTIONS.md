@@ -1,9 +1,11 @@
 
 # Welcome to Datum-Gateway!
 
-Quick-start guide for those already mining on OCEAN:
+This StartOS package builds **CONVOY/Blockvase datum_gateway** with **BLAKE2b** Stratum work and full **DATUM** extensions (not legacy OCEAN SHA256-only validation). Use a **Bitcoin Knots** node on the BLAKE2b chain.
 
-1. Bitcoin Knots is required. This can be found in the Start9 Community Marketplace.
+Quick-start (Blockvase / CONVOY pooled mining):
+
+1. Bitcoin Knots with BLAKE2b GBT is required. This can be found in the Start9 Community Marketplace.
 
 2. Set up simpleproxy as explained in the last section of this document.
 
@@ -29,7 +31,7 @@ You can pay yourself the entire block reward for any blocks your find (non-poole
 
 You can also Pool Mine on a pool that supports DATUM where you will split rewards with other miners for increased cash flow.
 
-By default, Datum-Gateway will do the latter on https://ocean.xyz without any additional configuration beyond entering a Bitcoin address under "Bitcoin Address". 
+By default, Datum-Gateway will do the latter on https://ocean.xyz without any additional configuration beyond entering a Bitcoin address under "Bitcoin Address".
 
 # Pooled Mining on OCEAN
 

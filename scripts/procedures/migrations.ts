@@ -100,5 +100,5 @@ export const migration: T.ExpectedExports.migration =
         )
       }
     },
-    "0.4.0.1"
+    "0.4.1.1"
   );

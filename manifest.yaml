@@ -5,12 +5,12 @@ id: datum
  # A human readable service title
 title: "Datum Gateway"
 # Service version - accepts up to four digits, where the last confirms to revisions necessary for StartOS - see documentation: https://github.com/Start9Labs/emver-rs. This value will change with each release of the service. 
-version: 0.4.0.1
+version: 0.4.1.1
 # Release notes for the update - can be a string, paragraph or URL
 release-notes: |
-  - This update make datum_gateway compatible with Bitcoin Knots v29.1
+  - Ship CONVOY/Blockvase datum_gateway with BLAKE2b Stratum validation and DATUM protocol extensions (ABW, coinbaser, v3 handshake)
 license: MIT
-wrapper-repo: "https://github.com/ocean-xyz/datum-gateway-startos"
+wrapper-repo: "https://github.com/innerhat-dev/datum-gateway-startos"
 upstream-repo: "https://github.com/ocean-xyz/datum-gateway"
 support-site: "https://ocean.xyz"
 marketing-site: "https://ocean.xyz"
