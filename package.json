@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@start9labs/start-sdk": "2.0.9",
-    "bitcoin-knots-startos": "github:Start9Labs/bitcoin-knots-startos#next/29.x"
+    "bitcoin-knots-startos": "github:Retropex/knots-startos#POW"
   },
   "devDependencies": {
     "@types/node": "^22.19.0",

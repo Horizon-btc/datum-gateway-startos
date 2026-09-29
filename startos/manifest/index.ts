@@ -5,7 +5,7 @@ export const manifest = setupManifest({
   id: 'datum',
   title: 'Datum Gateway',
   license: 'mit',
-  packageRepo: 'https://github.com/retropex/datum-gateway-startos',
+  packageRepo: 'https://github.com/horizon-btc/datum-gateway-startos',
   upstreamRepo: 'https://github.com/CONVOYMining/datum_gateway',
   marketingUrl: 'https://convoy.xyz',
   donationUrl: null,
