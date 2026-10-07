@@ -186,6 +186,48 @@ export const stratumConfig = sdk.Action.withInput(
   },
 
   async ({ effects, input }) => {
+    // Modifier names and addresses become JSON object keys on disk, so
+    // duplicates would silently overwrite each other. Upstream also misroutes
+    // shares when splits don't cover exactly 100%.
+    const names = new Set<string>()
+    for (const { name, addresses } of input.username_modifiers) {
+      if (names.has(name)) {
+        throw new Error(
+          i18n(
+            'Username modifier "${name}" is defined more than once. Each modifier name must be unique.',
+            { name },
+          ),
+        )
+      }
+      names.add(name)
+
+      const seen = new Set<string>()
+      let total = 0
+      for (const { address, split } of addresses) {
+        const key = address ?? ''
+        if (seen.has(key)) {
+          throw new Error(
+            i18n(
+              'Username modifier "${name}" lists the same address more than once. Each address, including the empty one, can only appear once.',
+              { name },
+            ),
+          )
+        }
+        seen.add(key)
+        total += split
+      }
+      if (Math.abs(total - 100) > 1e-6) {
+        throw new Error(
+          i18n(
+            'The address splits of username modifier "${name}" add up to ${total}%. They must add up to exactly 100%.',
+            // Pre-formatted: numeric params go through Intl, which throws on
+            // locales like LANG=C.UTF-8.
+            { name, total: String(parseFloat(total.toFixed(6))) },
+          ),
+        )
+      }
+    }
+
     const transformed = {
       ...input,
       username_modifiers: input.username_modifiers.map((modifier) => ({
