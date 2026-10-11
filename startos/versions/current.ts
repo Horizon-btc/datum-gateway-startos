@@ -1,9 +1,9 @@
 import { VersionInfo } from '@start9labs/start-sdk'
 
 export const current = VersionInfo.of({
-  version: '#pow:0.4.1:27',
+  version: '#pow:0.5.0:1',
   releaseNotes: {
-    en_US: "Update to the latest master commit - 971af86b93de088e217a9e74d1ac70188565dbb7"
+    en_US: "Update to v0.5.0beta"
   },
   migrations: {
     up: async ({ effects }) => {},
