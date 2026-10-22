@@ -85,7 +85,7 @@ export const datumConfig = sdk.Action.withInput(
   async () => ({
     name: i18n('Datum'),
     description: i18n(
-      'Datum-Gateway settings. These are set to mine on OCEAN by default. Modify to switch to another Datum-supporting pool, or to solo mine.',
+      'Datum-Gateway settings. These are set to mine on CONVOY by default. Modify to switch to another Datum-supporting pool, or to solo mine.',
     ),
     warning: null,
     allowedStatuses: 'any',

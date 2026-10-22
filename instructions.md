@@ -2,14 +2,14 @@
 
 ## Documentation
 
-- [OCEAN Datum documentation](https://ocean.xyz/docs) — upstream guide to DATUM, pool mining on OCEAN, and miner setup.
+- [CONVOY Datum documentation](https://convoy.xyz/getstarted) — upstream guide to DATUM, pool mining on CONVOY, and miner setup.
 
 ## What you get on StartOS
 
 - A **Web UI** interface (the Datum Gateway dashboard) for monitoring connected miners, hashrate, and share activity.
 - A **Stratum Server** interface that your ASICs point at to receive work.
 - A pre-wired connection to a local **Bitcoin** node (cookie-authenticated, with `blocknotify` set automatically) for block template generation.
-- A default configuration that pool-mines on OCEAN; switchable to another DATUM-supporting pool or solo mining through one action.
+- A default configuration that pool-mines on CONVOY; switchable to another DATUM-supporting pool or solo mining through one action.
 
 ## Getting set up
 
@@ -19,7 +19,7 @@ Datum Gateway posts two critical tasks after install. You can't start the servic
 
 1. Install and start **Bitcoin**. Datum Gateway will set its `blocknotify` automatically when the dependency is satisfied.
 2. Run the **Create Password** task. A random admin password is generated and shown once — copy and save it before dismissing. You'll need it to log into the dashboard. If you lose it, run the **Reset Password** action later.
-3. Run the **Config pool address** task and enter the Bitcoin address you want mining rewards paid to. This is the payout address Datum Gateway uses for solo-found blocks, and as the fail-safe when pooling on OCEAN.
+3. Run the **Config pool address** task and enter the Bitcoin address you want mining rewards paid to. This is the payout address Datum Gateway uses for solo-found blocks, and as the fail-safe when pooling on CONVOY.
 4. Start Datum Gateway.
 
 ## Using Datum Gateway
@@ -29,7 +29,7 @@ Datum Gateway posts two critical tasks after install. You can't start the servic
 Configure each ASIC with:
 
 - **Stratum URL** — the Stratum Server interface address (host:port of this service; default port is `23334`).
-- **Username** — a Bitcoin address, optionally suffixed with a worker name (e.g. `bc1q…abc.bitaxe1`). With **Pool Pass Full Users** enabled (the default), this is the address OCEAN pays out to.
+- **Username** — a Bitcoin address, optionally suffixed with a worker name (e.g. `bc1q…abc.bitaxe1`). With **Pool Pass Full Users** enabled (the default), this is the address CONVOY pays out to.
 - **Password** — ignored. Leave blank or set `x`.
 
 If you'd rather use a single payout address for every miner and put only worker names in your ASICs, run the **Datum** action and disable **Pool Pass Full Users**. The Bitcoin address from the **Mining Settings** action is then used for pool payouts.

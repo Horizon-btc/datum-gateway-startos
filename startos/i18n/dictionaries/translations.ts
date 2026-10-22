@@ -113,7 +113,7 @@ export default {
     262: 'Niveau de log dans le fichier',
     263: 'Niveau de log minimum dans le fichier',
     264: 'Datum',
-    265: 'Paramètres de Datum Gateway. Par défaut, ils sont configurés pour miner sur OCEAN. Modifiez-les pour utiliser un autre pool compatible avec Datum ou pour miner en solo.',
+    265: 'Paramètres de Datum Gateway. Par défaut, ils sont configurés pour miner sur CONVOY. Modifiez-les pour utiliser un autre pool compatible avec Datum ou pour miner en solo.',
     266: 'Hôte pour la pool',
     267: 'Serveur DATUM distant (hôte/adresse IP) à utiliser pour le minage mutualisé décentralisé',
     268: 'Port de la pool',
