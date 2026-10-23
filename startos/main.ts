@@ -6,6 +6,7 @@ import { sdk } from './sdk'
 import {
   bitcoindRpcUrl,
   dataDir,
+  filterRpcUrl,
   knotsMountpoint,
   stratumPort,
   uiPort,
@@ -19,9 +20,10 @@ export const main = sdk.setupMain(async ({ effects }) => {
     throw new Error('datum config file not found')
   }
 
-  // Point Datum at bitcoind's RPC over the LXC bridge (replaces bitcoind.startos DNS).
-  // Absent until bitcoind resolves; omit rpcurl rather than write a dead address.
-  const rpcurl = await bitcoindRpcUrl(effects)
+  // Prefer Template Filter when it is installed. Otherwise Bitcoin on the bridge.
+  // blocknotify stays on Bitcoin. Omit rpcurl rather than write a dead address.
+  const rpcurl =
+    (await filterRpcUrl(effects)) ?? (await bitcoindRpcUrl(effects))
   if (rpcurl) {
     await configJson.merge(
       effects,

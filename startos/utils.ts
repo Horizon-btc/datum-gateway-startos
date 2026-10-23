@@ -37,6 +37,25 @@ export const bitcoindRpcUrl = async (effects: T.Effects) => {
   return bridge == null ? undefined : `http://${bridge}`
 }
 
+// Template Filter binds this host and port. It is not a declared dependency:
+// that package already requires Datum, and a reverse edge would cycle.
+export const filterPackageId = 'template-filter'
+export const filterRpcHostId = 'rpc'
+export const filterRpcPort = 8336
+
+/** Filter RPC over the bridge, or undefined when Template Filter is not installed. */
+export const filterRpcUrl = async (effects: T.Effects) => {
+  const bridge = await sdk.host
+    .getBridgeAddress(effects, {
+      packageId: filterPackageId,
+      hostId: filterRpcHostId,
+      internalPort: filterRpcPort,
+      ssl: false,
+    })
+    .const()
+  return bridge == null ? undefined : `http://${bridge}`
+}
+
 /**
  * Datum's own Web UI over the LXC bridge, as a URL, so bitcoind's blocknotify
  * can reach it — replacing the deprecated `http://datum.startos:7152`.
