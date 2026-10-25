@@ -6,6 +6,17 @@ import { sdk } from '../../sdk'
 const { InputSpec, Value } = sdk
 
 const inputSpec = InputSpec.of({
+  template_source: Value.select({
+    name: i18n('Block templates'),
+    description: i18n(
+      'Where Datum reads block templates. Template Filter is used only when that package is installed.',
+    ),
+    default: 'filter',
+    values: {
+      filter: 'Template Filter',
+      bitcoin: 'Bitcoin',
+    },
+  }),
   work_update_seconds: Value.number({
     name: i18n('Work Update (Seconds)'),
     description: i18n('How frequently should Bitcoind send updated templates'),

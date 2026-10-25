@@ -52,6 +52,8 @@ const dict = {
   // spec.ts
   'Bitcoin RPC settings': 200,
   'RPC settings for bitcoind': 201,
+  'Block templates': 202,
+  'Where Datum reads block templates. Template Filter is used only when that package is installed.': 203,
   'Work Update (Seconds)': 204,
   'How frequently should Bitcoind send updated templates': 205,
   'Stratum Server Settings': 206,
