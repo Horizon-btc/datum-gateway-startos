@@ -52,6 +52,8 @@ export default {
     // spec.ts
     200: 'Réglages RPC Bitcoin',
     201: 'Réglages RPC pour bitcoind',
+    202: 'Modèles de bloc',
+    203: 'Où Datum lit les modèles de bloc. Template Filter est utilisé seulement si ce paquet est installé.',
     204: 'Mise à jour du travail en secondes',
     205: 'À quelle fréquence bitcoind doit envoyer les mise à jour du modèle de bloc',
     206: 'Réglages du serveur Stratum',

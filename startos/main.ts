@@ -6,6 +6,7 @@ import { sdk } from './sdk'
 import {
   bitcoindRpcUrl,
   dataDir,
+  filterRpcUrl,
   knotsMountpoint,
   stratumPort,
   uiPort,
@@ -19,16 +20,16 @@ export const main = sdk.setupMain(async ({ effects }) => {
     throw new Error('datum config file not found')
   }
 
-  // Point Datum at bitcoind's RPC over the LXC bridge (replaces bitcoind.startos DNS).
-  // Absent until bitcoind resolves; omit rpcurl rather than write a dead address.
-  const rpcurl = await bitcoindRpcUrl(effects)
-  if (rpcurl) {
-    await configJson.merge(
-      effects,
-      { bitcoind: { rpcurl } },
-      { allowWriteAfterConst: true },
-    )
-  }
+  // Bitcoin RPC settings choose the template source.
+  const rpcurl =
+    conf.bitcoind.template_source === 'bitcoin'
+      ? await bitcoindRpcUrl(effects)
+      : await filterRpcUrl(effects)
+  await configJson.merge(
+    effects,
+    { bitcoind: { rpcurl: rpcurl ?? '' } },
+    { allowWriteAfterConst: true },
+  )
 
   const datumSub = await sdk.SubContainer.eager(
     effects,
