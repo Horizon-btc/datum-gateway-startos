@@ -20,20 +20,16 @@ export const main = sdk.setupMain(async ({ effects }) => {
     throw new Error('datum config file not found')
   }
 
-  // Bitcoin RPC settings choose the template source. Filter falls back to
-  // Bitcoin when that package is not installed. blocknotify stays on Bitcoin.
-  // Omit rpcurl rather than write a dead address.
+  // Bitcoin RPC settings choose the template source.
   const rpcurl =
     conf.bitcoind.template_source === 'bitcoin'
       ? await bitcoindRpcUrl(effects)
-      : (await filterRpcUrl(effects)) ?? (await bitcoindRpcUrl(effects))
-  if (rpcurl) {
-    await configJson.merge(
-      effects,
-      { bitcoind: { rpcurl } },
-      { allowWriteAfterConst: true },
-    )
-  }
+      : await filterRpcUrl(effects)
+  await configJson.merge(
+    effects,
+    { bitcoind: { rpcurl: rpcurl ?? '' } },
+    { allowWriteAfterConst: true },
+  )
 
   const datumSub = await sdk.SubContainer.eager(
     effects,

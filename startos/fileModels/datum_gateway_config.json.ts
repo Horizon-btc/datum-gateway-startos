@@ -17,9 +17,7 @@ const bitcoindShape = z.object({
   rpcuser: z.undefined().catch(undefined),
   rpcpassword: z.undefined().catch(undefined),
   // Configurable (upstream defaults apply when absent)
-  // StartOS only. Datum ignores this key. filter uses Template Filter when
-  // that package is installed, and Bitcoin otherwise.
-  template_source: z.enum(['filter', 'bitcoin']).catch('filter'),
+  template_source: z.enum(['filter', 'bitcoin']).catch('bitcoin'),
   work_update_seconds: optNumber,
   notify_fallback: optBoolean,
 })

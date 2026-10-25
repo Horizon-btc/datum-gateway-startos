@@ -11,7 +11,7 @@ const inputSpec = InputSpec.of({
     description: i18n(
       'Where Datum reads block templates. Template Filter is used only when that package is installed.',
     ),
-    default: 'filter',
+    default: 'bitcoin',
     values: {
       filter: 'Template Filter',
       bitcoin: 'Bitcoin',
