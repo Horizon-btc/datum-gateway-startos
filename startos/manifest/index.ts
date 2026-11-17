@@ -1,5 +1,5 @@
 import { setupManifest } from '@start9labs/start-sdk'
-import { bitcoinDescription, long, short } from './i18n'
+import { long, short } from './i18n'
 
 export const manifest = setupManifest({
   id: 'datum',
@@ -20,16 +20,6 @@ export const manifest = setupManifest({
         },
       },
       arch: ['x86_64', 'aarch64'],
-    },
-  },
-  dependencies: {
-    bitcoind: {
-      description: bitcoinDescription,
-      optional: true,
-      metadata: {
-        title: 'Bitcoin',
-        icon: 'https://raw.githubusercontent.com/Start9Labs/bitcoin-knots-startos/cd8e4a6c77c8513cf1eca1997eb8029ed62b3863/dep-icon.svg',
-      },
     },
   },
 })

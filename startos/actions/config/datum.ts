@@ -42,7 +42,8 @@ const inputSpec = InputSpec.of({
     min: 0,
     required: false,
     integer: true,
-    description: 'Maximum time to remain away from the configured DATUM server after a server-requested migration (0 disables migration)',
+    description:
+      'Maximum time to remain away from the configured DATUM server after a server-requested migration (0 disables migration)',
   }),
   pool_pass_workers: Value.toggle({
     name: i18n('Pool Pass Workers'),

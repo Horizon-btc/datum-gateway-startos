@@ -6,8 +6,8 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@start9labs/start-sdk": "2.0.9",
-    "bitcoin-knots-startos": "github:Retropex/knots-startos#POW"
+    "@start9labs/start-sdk": "4.1.0",
+    "bitcoin-knots-startos": "github:horizon-btc/knots-startos#master"
   },
   "devDependencies": {
     "@types/node": "^22.19.0",
@@ -22,6 +22,7 @@
     "singleQuote": true
   },
   "overrides": {
-    "@start9labs/start-sdk": "$@start9labs/start-sdk"
+    "@start9labs/start-sdk": "$@start9labs/start-sdk",
+    "tor-startos": "github:Start9Labs/tor-startos#8a6ab4b0a5f2063d2eeb972a953d8701feb10749"
   }
 }
